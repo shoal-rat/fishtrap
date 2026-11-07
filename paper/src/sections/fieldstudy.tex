@@ -1,0 +1,34 @@
+\section{Field Study}
+\label{sec:fieldstudy}
+
+We identified 27 verified incidents in 64 of the author's own Codex sessions from October to November 2026. The study used a digest for each session, LLM readers to extract candidate incidents, and verification of each candidate against the raw log. Only verified incidents enter the analysis. The records include the user's goal, the agent's action, supporting evidence, a verification rationale, severity, and whether the user caught the problem. The 27 incidents occur in 15 sessions. This is a retrospective case study of one user's workflows; the counts describe the collected incidents and their recorded impact judgments.
+
+We assigned each incident one primary behavioral category using the five-category taxonomy in Table~\ref{tab:taxonomy}. An incident can fit several categories: an upload-size constraint can capture attention while an internal filename escapes into the recipient's view. Primary assignment makes the counts additive. Severity uses the incident records' high, medium, and low labels. An incident is coded as caught when the record documents user detection or correction. ``Uncaught'' means that the record contains no such detection.
+
+\begin{table}[tb]
+    \centering
+    \small
+    \setlength{\tabcolsep}{4pt}
+    \caption{Primary behavioral categories of the 27 verified incidents. H/M/L gives recorded severity. U counts incidents uncaught by the user; E counts direct evidence of an earlier appropriate action or correction in the same session. Definitions and examples omit identifying personal and institutional details.}
+    \label{tab:taxonomy}
+    \begin{tabularx}{\linewidth}{@{}lrrrrX@{}}
+        \toprule
+        Category & $n$ & H/M/L & U & E & Definition; example \\
+        \midrule
+        R1: Proxy capture & 6 & 1/2/3 & 2 & 1 & A local check becomes the objective. \emph{A target of 50 applications displaced employer-quality criteria.} \\
+        R2: Working-set closure & 3 & 0/3/0 & 2 & 0 & Completion follows the currently visible work. \emph{Applications parked for login were dropped after login succeeded.} \\
+        R3: Recipient blindness & 9 & 3/3/3 & 5 & 5 & An artifact assumes its writer's context. \emph{A job-application portal received a photo named for civil-service registration.} \\
+        R4: Defensive self-audit & 6 & 3/3/0 & 4 & 1 & The agent's accuracy audit governs recipient-facing text. \emph{A form-minimum explanation led the strengths field.} \\
+        R5: Rules without reasons & 3 & 0/3/0 & 1 & 0 & A rule travels beyond the purpose that scopes it. \emph{An English-prose request became an ASCII assertion on a literal log marker.} \\
+        \midrule
+        Total & 27 & 7/14/6 & 14 & 7 & \\
+        \multicolumn{6}{@{}l@{}}{High severity: explicit upload/submit/send, 4/7; including live form entry, 6/7.} \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+The logs establish what was prepared, entered, or uploaded. Employer decisions and other downstream outcomes fall outside the observations. The high-severity boundary counts distinguish upload or submission from saved form entries, which can precede final submission.
+
+Earlier precedents include preparing a clean filename, using approved terminology, and beginning to move a misplaced entry. The E count also includes direct user corrections of a field's interpretation.
+
+The incidents involve decisions about counts and validation (R1), task closure (R2), recipient-facing artifacts (R3 and R4), and the scope of earlier rules (R5). We used those decision points to select hook triggers.

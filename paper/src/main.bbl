@@ -1,0 +1,120 @@
+\begin{thebibliography}{15}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Amodei et~al.(2016)Amodei, Olah, Steinhardt, Christiano, Schulman, and
+  Man{\'e}]{amodei2016concrete}
+Dario Amodei, Chris Olah, Jacob Steinhardt, Paul Christiano, John Schulman, and
+  Dan Man{\'e}.
+\newblock Concrete problems in {AI} safety.
+\newblock arXiv preprint arXiv:1606.06565, 2016.
+\newblock URL \url{https://arxiv.org/abs/1606.06565}.
+
+\bibitem[Dongre et~al.(2025)Dongre, Rossi, Lai, Yoon, Hakkani-T{\"u}r, and
+  Bui]{dongre2025drift}
+Vardhan Dongre, Ryan~A. Rossi, Viet~Dac Lai, David~Seunghyun Yoon, Dilek
+  Hakkani-T{\"u}r, and Trung Bui.
+\newblock Drift no more? context equilibria in multi-turn {LLM} interactions.
+\newblock arXiv preprint arXiv:2510.07777, 2025.
+\newblock URL \url{https://arxiv.org/abs/2510.07777}.
+
+\bibitem[Huang et~al.(2023)Huang, Chen, Mishra, Zheng, Yu, Song, and
+  Zhou]{huang2023selfcorrect}
+Jie Huang, Xinyun Chen, Swaroop Mishra, Huaixiu~Steven Zheng, Adams~Wei Yu,
+  Xinying Song, and Denny Zhou.
+\newblock Large language models cannot self-correct reasoning yet.
+\newblock arXiv preprint arXiv:2310.01798, 2023.
+\newblock URL \url{https://arxiv.org/abs/2310.01798}.
+
+\bibitem[Jaroslawicz et~al.(2025)Jaroslawicz, Whiting, Shah, and
+  Maamari]{jaroslawicz2025instructions}
+Daniel Jaroslawicz, Brendan Whiting, Parth Shah, and Karime Maamari.
+\newblock How many instructions can {LLMs} follow at once?
+\newblock arXiv preprint arXiv:2507.11538, 2025.
+\newblock URL \url{https://arxiv.org/abs/2507.11538}.
+
+\bibitem[Ji et~al.(2026)Ji, Zhang, Xu, Li, Gao, Wang, and
+  Cheung]{ji2026guessing}
+Zimo Ji, Zekai Zhang, Congying Xu, Zongjie Li, Yudong Gao, Shuai Wang, and
+  Shing-Chi Cheung.
+\newblock Coding agents are guessing: Measuring action-boundary violations in
+  underspecified {DevOps} instructions.
+\newblock arXiv preprint arXiv:2607.02294, 2026.
+\newblock URL \url{https://arxiv.org/abs/2607.02294}.
+
+\bibitem[Laban et~al.(2025)Laban, Hayashi, Zhou, and Neville]{laban2025lost}
+Philippe Laban, Hiroaki Hayashi, Yingbo Zhou, and Jennifer Neville.
+\newblock {LLMs} get lost in multi-turn conversation.
+\newblock arXiv preprint arXiv:2505.06120, 2025.
+\newblock URL \url{https://arxiv.org/abs/2505.06120}.
+
+\bibitem[Liao et~al.(2026)Liao, Huang, Liu, Deng, and Ren]{liao2026defensive}
+Junchi Liao, Xiao Huang, Yucheng Liu, Jiawen Deng, and Fuji Ren.
+\newblock Defensive writing in {GPT} models.
+\newblock arXiv preprint arXiv:2610.11355, 2026.
+\newblock URL \url{https://arxiv.org/abs/2610.11355}.
+
+\bibitem[Liu et~al.(2023{\natexlab{a}})Liu, Lin, Hewitt, Paranjape, Bevilacqua,
+  Petroni, and Liang]{liu2023lost}
+Nelson~F. Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua,
+  Fabio Petroni, and Percy Liang.
+\newblock Lost in the middle: How language models use long contexts.
+\newblock arXiv preprint arXiv:2307.03172, 2023{\natexlab{a}}.
+\newblock URL \url{https://arxiv.org/abs/2307.03172}.
+
+\bibitem[Liu et~al.(2023{\natexlab{b}})Liu, Yen, Marjieh, Griffiths, and
+  Krishna]{liu2023audiences}
+Ryan Liu, Howard Yen, Raja Marjieh, Thomas~L. Griffiths, and Ranjay Krishna.
+\newblock Improving interpersonal communication by simulating audiences with
+  language models.
+\newblock arXiv preprint arXiv:2311.00687, 2023{\natexlab{b}}.
+\newblock URL \url{https://arxiv.org/abs/2311.00687}.
+
+\bibitem[Manheim and Garrabrant(2018)]{manheim2018categorizing}
+David Manheim and Scott Garrabrant.
+\newblock Categorizing variants of {Goodhart's} law.
+\newblock arXiv preprint arXiv:1803.04585, 2018.
+\newblock URL \url{https://arxiv.org/abs/1803.04585}.
+
+\bibitem[{OpenAI}(2025)]{openai2025gpt41}
+{OpenAI}.
+\newblock {GPT-4.1} prompting guide.
+\newblock OpenAI Cookbook, 2025.
+\newblock URL
+  \url{https://developers.openai.com/cookbook/examples/gpt4-1_prompting_guide}.
+\newblock Accessed 2026-11-07.
+
+\bibitem[{OpenAI}(2026{\natexlab{a}})]{openai2026computeruse}
+{OpenAI}.
+\newblock Computer use integration recipes.
+\newblock OpenAI API documentation, 2026{\natexlab{a}}.
+\newblock URL
+  \url{https://developers.openai.com/api/docs/guides/tools-computer-use-integration}.
+\newblock Accessed 2026-11-07.
+
+\bibitem[{OpenAI}(2026{\natexlab{b}})]{openai2026gpt6}
+{OpenAI}.
+\newblock Using {GPT-6}.
+\newblock OpenAI API documentation, 2026{\natexlab{b}}.
+\newblock URL \url{https://developers.openai.com/api/docs/guides/latest-model}.
+\newblock Accessed 2026-11-07.
+
+\bibitem[{OpenAI}(2026{\natexlab{c}})]{openai2026hooks}
+{OpenAI}.
+\newblock Hooks.
+\newblock ChatGPT Learn documentation, 2026{\natexlab{c}}.
+\newblock URL \url{https://developers.openai.com/codex/hooks}.
+\newblock Accessed 2026-11-07; redirects to
+  https://learn.chatgpt.com/docs/hooks.
+
+\bibitem[Wilf et~al.(2023)Wilf, Lee, Liang, and Morency]{wilf2023think}
+Alex Wilf, Sihyun~Shawn Lee, Paul~Pu Liang, and Louis-Philippe Morency.
+\newblock Think twice: Perspective-taking improves large language models'
+  theory-of-mind capabilities.
+\newblock arXiv preprint arXiv:2311.10227, 2023.
+\newblock URL \url{https://arxiv.org/abs/2311.10227}.
+
+\end{thebibliography}

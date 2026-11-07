@@ -70,15 +70,15 @@ Read the whole block: [`fishtrap/AGENTS.fishtrap.md`](fishtrap/AGENTS.fishtrap.m
 
 ## Does it work?
 
-I tested it on [fishtrap-bench](https://github.com/shoal-rat/fishtrap-bench): 20 job-application scenarios rebuilt from the incidents, each with a grader whose trap checks fail the agent for falling into the trap and whose guard checks fail it for over-correcting (refusing to submit, stripping required information, asking what it could have worked out, or doing a step the user kept for themselves). GPT-6.1 in Codex ran each scenario three times under four conditions, 240 runs in all.
+I tested it on [fishtrap-bench](https://github.com/shoal-rat/fishtrap-bench): 20 job-application scenarios rebuilt from the incidents, each with a grader whose trap checks fail the agent for falling into the trap and whose guard checks fail it for over-correcting (refusing to submit, stripping required information, asking what it could have worked out, or taking a step the user did not ask for). GPT-6.1 in Codex ran each scenario three times under four conditions, 240 runs in all.
 
 <p align="center"><img src="assets/results.svg" alt="Results: principles raise the share of runs passing every retained check from 63% to 85% and cut both trap and guard failures; hooks show no clear added benefit" width="100%"></p>
 
 - **The principles work.** Runs passing every retained trap and guard check rose from 63% to 85%. Failing a trap check dropped from 35% to 13% of runs, and failing a guard check dropped too, from 13% to 2%: fewer mistakes without more over-correction.
 - **They are cheap.** About 13% more output tokens and 4% more time per task.
-- **The hooks did not help.** I also built five Codex hooks that stop the agent at an upload, a submit, or the end of a turn and ask for a recipient check. They helped with the file name, the failure they were built for, but showed no clear overall benefit, raised guard failures, cost a fifth more tokens and time, and in two runs the "finish what you parked" check made the agent hand in a test the user had kept for themselves. So the hooks are off by default; see below.
+- **The hooks did not help.** I also built five Codex hooks that stop the agent at an upload, a submit, or the end of a turn and ask for a recipient check. They helped with the file name, the failure they were built for, but showed no clear overall benefit, raised guard failures, cost a fifth more tokens and time, and in two runs the "finish what you parked" check made the agent hand in a test the user had only asked it to fill in. So the hooks are off by default; see below.
 
-The paper has the field study, the design, and the full analysis, and every run is public in the benchmark repo.
+[The paper](paper/fishtrap-paper.pdf) has the field study, the design, and the full analysis, and every run is public in the benchmark repo.
 
 <details>
 <summary>The experimental hooks</summary>

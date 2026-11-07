@@ -1,0 +1,10 @@
+\subsection{Development pilot}
+\label{sec:pilot}
+
+Before the final experiment we ran a pilot on S1--S16 with two repetitions per condition (128 runs) and an earlier version of the principles. Its baseline was stronger than N: the author's own hand-tuned \texttt{AGENTS.md} (A), which already contained several goal-understanding rules written after the incidents. The other conditions were the early principles (B), B with hooks (C), and A with hooks (D).
+
+On the primary measure, passing every retained trap and guard check, every fishtrap condition passed 87.5\% of runs against 78.1\% for A. Trap failures fell from six of 32 runs in A to three in B and C and four in D. Guard-check failures stayed rare in every condition (at most one run in 32 failed a guard check). Hard failures fell from four (A) to one (B, C) and two (D). The judges did not separate the conditions (Claude judges: 6.4--6.8 of 10; GPT judge: 7.4--7.7). Hooks cost time: C used 29\% more output tokens than A and took 28\% longer.
+
+The pilot changed the study in three ways. First, the grader audit came from reading pilot failures that were grader errors. Second, most short runs finished within about ten tool calls, which motivated a longer-session evaluation using the long-horizon scenarios. Third, the principles were rewritten after we read the failing runs, which is why S1--S16 count as development data.
+
+\paragraph{Judge agreement.} The pilot's Claude and GPT judges received the same final files and abridged transcripts, prepared in the same way as the final judge's inputs. Their agreement measures consistency between judges given those inputs. The GPT-6.1 judge used for the final experiment agreed with the mean of the available Claude scores (two scores for 121 runs and one for seven) at Spearman $\rho = 0.83$ ($n = 128$), with a mean absolute difference of 1.18 points; GPT scored runs higher on average (7.55 against 6.57). The two Claude judges, which differed only in the reading they were asked to take, agreed at $\rho = 0.97$ ($n = 121$).

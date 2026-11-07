@@ -1,0 +1,18 @@
+\section{Related Work}
+\label{sec:related}
+
+\textbf{Instruction following and proxy objectives.}
+OpenAI describes GPT-4.1 as trained for closer, more literal instruction following \citep{openai2025gpt41}. IFScale finds declining adherence as instruction density increases, including a bias toward earlier instructions \citep{jaroslawicz2025instructions}. Goal misgeneralization raises the broader question of whether behavior continues to serve its intended objective. Specification gaming and Goodhart effects describe how an operational proxy can displace that objective \citep{amodei2016concrete,manheim2018categorizing}. Our proxy-capture category applies this account to decisions such as satisfying a count through progressively weaker choices. The field labels describe behavior within recorded tasks.
+
+\textbf{Context and conversational drift.}
+\citet{liu2023lost} show that access to relevant information depends on its position in a long context. \citet{laban2025lost} document performance loss when task specifications unfold over multiple turns, including reliance on early assumptions. \citet{dongre2025drift} find that reminders reduce divergence from goal-consistent behavior in their tested settings. These results motivate restating the goal near consequential actions. Their tasks and models delimit the evidence for transferring that approach to Codex workflows.
+
+\textbf{Recipient perspective and correction.}
+SimToM filters context to what a character knows before answering questions about that character's beliefs \citep{wilf2023think}. Audience simulation improves message selection in interpersonal communication tasks \citep{liu2023audiences}. fishtrap asks the acting model to inspect concrete filenames, fields, and messages from their recipient's perspective. This remains a prompted review: intrinsic self-correction has shown limited reliability on reasoning tasks without external feedback \citep{huang2023selfcorrect}. The controlled evaluation measures whether the intervention helps in this setting.
+
+\textbf{Underspecification, defensive writing, and hooks.}
+UnderSpecBench measures wrong-target and excess-scope actions under underspecified DevOps instructions \citep{ji2026guessing}. It motivates checking whether an ambiguity requires user input. OpenAI's GPT-6 guidance discusses instruction sensitivity and excess clarification in Astra, and recommends avoiding unsolicited disclaimers and approval flows \citep{openai2026gpt6}.
+
+\citet{liao2026defensive} measure defensive writing in academic rewriting tasks: from GPT-5.5 on, GPT versions add more ungrounded qualifications than the authors' originals, GPT-6-astra adds the most, and the qualifications follow the request, absent under polishing and peaking when the prompt names a reviewer's concerns. Their finding that the framing of the request drives the hedging motivates fishtrap's choice to frame work by its recipient and outcome. Our field study records process explanations and other recipient-facing errors in agent workflows.
+
+Codex hooks expose lifecycle events and pre-execution denial \citep{openai2026hooks}; official computer-use guidance places execution controls and consent checks in the application \citep{openai2026computeruse}. fishtrap uses these interfaces to schedule a recipient check and a closure check. Its distinctive design question is when an agent should reconsider the purpose of an otherwise executable action.

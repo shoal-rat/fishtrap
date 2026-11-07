@@ -1,0 +1,20 @@
+\section{Introduction}
+\label{sec:intro}
+
+Asked to upload a photo for a job application, a Codex agent selected a photo prepared for civil-service exam registration and uploaded it under its original filename, \texttt{\zh{国考报名照片}.JPG}. The file passed the immediate technical check: it was small enough to upload. The uploaded filename carried a label for another application purpose that a recruiter could see.
+
+This failure started the fishtrap project. It recurred in a second application, and related failures appeared across the author's work with GPT-6.1 Sol agents in Codex. An agent met an application-count target by weakening the selection criteria. Another cleared warnings on internship entries it had already identified as belonging in a different section. Others placed explanations of form limitations at the start of persuasive application text, or reported completion while previously blocked work remained unfinished. Each action satisfied a visible local test while losing part of the outcome the user sought.
+
+We call this pattern \emph{mechanical goal interpretation}: a constraint, intermediate state, or remembered instruction becomes the operative objective at a decision point. Its defensive variant treats the agent's own account of how it filled a form as material for the recipient. The application text then carries process notes where the user needed a clear account of their experience. These descriptions concern observable decisions in the logs; they support a taxonomy of failures at inference time.
+
+The recipient's view supplies a concrete test of the goal. What filename arrives? What does each field say? What background does its reader have? What conclusion does the finished application invite? This test also connects local actions to the larger task: successful upload, valid fields, and a completed first module each establish only part of the requested end state. The field study motivates checking during execution. In both civil-service-photo incidents, the upload occurred at tool call 114. Earlier actions in those sessions demonstrated relevant file preparation skills.
+
+We introduce \emph{fishtrap}, an open-source intervention with two layers.\footnote{\url{https://github.com/shoal-rat/fishtrap}} Principles in \texttt{AGENTS.md} connect instructions to their reasons and identify the reader who will judge the result. Five Codex lifecycle hooks bring those principles back at specific decisions, including upload, submission, validation, resumption, and turn completion. Before an outbound action, a hook denies the first attempt and asks the model to inspect what the recipient will see; the retry remains the model's decision.
+
+The paper makes four contributions:
+\begin{enumerate}
+    \item A field study of 27 verified incidents from 64 real sessions, organized into five behavioral categories: proxy capture, working-set closure, recipient blindness, defensive self-audit, and rules without reasons.
+    \item fishtrap: reason-carrying principles combined with hooks placed at the outbound boundary and other observed points of drift.
+    \item A benchmark of 20 scenarios, with a two-auditor check audit for S1--S16 and adversarial grader review for L1--L4, released separately as \texttt{fishtrap-bench}.
+    \item A $2\times2$ evaluation crossing principles and hooks to estimate their separate effects and interaction. The principles alone raise the share of runs that pass every retained trap and guard check from 63\% to 85\% and lower guard-check failures. We found no clear additional primary pass-rate benefit from hooks. Hooks improved file naming in S1 and, in two S9 runs, prompted a final hand-in the user had not asked for.
+\end{enumerate}
