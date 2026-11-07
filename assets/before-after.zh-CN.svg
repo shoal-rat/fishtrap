@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="566" viewBox="0 0 980 566">
+<rect width="980" height="566" rx="14" fill="#fbf8f3"/>
+<text x="28" y="44.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="21" font-weight="700" fill="#1f2933">同一个模型，同一个任务，差别在于它心里装着谁。</text>
+<text x="28" y="96.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13.5" font-weight="700" fill="#6b7280">场景</text>
+<text x="238" y="96.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13.5" font-weight="700" fill="#b42318">没有 fishtrap</text>
+<text x="610" y="96.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13.5" font-weight="700" fill="#1a7f37">装了 fishtrap</text>
+<line x1="28" y1="108" x2="952" y2="108" stroke="#e6dfd3" stroke-width="1.5"/>
+<rect x="226" y="122" width="364" height="90" rx="8" fill="#fdf0ee"/>
+<rect x="598" y="122" width="354" height="90" rx="8" fill="#eef7f0"/>
+<text x="28" y="150.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14.5" font-weight="600" fill="#1f2933">给网申上传</text>
+<text x="28" y="169.6" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14.5" font-weight="600" fill="#1f2933">证件照</text>
+<text x="238" y="150.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'PingFang SC', monospace" font-size="15" font-weight="600" fill="#b42318">国考报名照片.JPG</text>
+<text x="238" y="176.2" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12.5" font-weight="normal" fill="#6b7280">国考报名用的照片，</text>
+<text x="238" y="193.1" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12.5" font-weight="normal" fill="#6b7280">原名直接发给了用人单位</text>
+<text x="610" y="150.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'PingFang SC', monospace" font-size="15" font-weight="600" fill="#1a7f37">林知远_证件照.jpg</text>
+<text x="610" y="176.2" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12.5" font-weight="normal" fill="#6b7280">为这家单位单独复制、重新命名</text>
+<rect x="226" y="228" width="364" height="90" rx="8" fill="#fdf0ee"/>
+<rect x="598" y="228" width="354" height="90" rx="8" fill="#eef7f0"/>
+<text x="28" y="256.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14.5" font-weight="600" fill="#1f2933">一个求职者</text>
+<text x="28" y="275.6" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14.5" font-weight="600" fill="#1f2933">答不了的必填项</text>
+<text x="238" y="256.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'PingFang SC', monospace" font-size="15" font-weight="600" fill="#b42318">1（本人为在校学生，无收入，</text>
+<text x="238" y="276.2" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'PingFang SC', monospace" font-size="15" font-weight="600" fill="#b42318">系统必填故填最低值）</text>
+<text x="238" y="302.5" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12.5" font-weight="normal" fill="#6b7280">解释写进了 HR 看的栏位</text>
+<text x="610" y="256.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'PingFang SC', monospace" font-size="15" font-weight="600" fill="#1a7f37">1</text>
+<text x="610" y="282.2" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12.5" font-weight="normal" fill="#6b7280">栏位只填数值；说明写给你：</text>
+<text x="610" y="299.1" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12.5" font-weight="normal" fill="#6b7280">“系统最低值，你是在校生”</text>
+<rect x="226" y="334" width="364" height="90" rx="8" fill="#fdf0ee"/>
+<rect x="598" y="334" width="354" height="90" rx="8" fill="#eef7f0"/>
+<text x="28" y="362.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14.5" font-weight="600" fill="#1f2933">“太少了，</text>
+<text x="28" y="381.6" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14.5" font-weight="600" fill="#1f2933">凑够30个”</text>
+<text x="238" y="362.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14.5" font-weight="normal" fill="#1f2933">投了30个，其中15个在你排除</text>
+<text x="238" y="381.6" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14.5" font-weight="normal" fill="#1f2933">的城市和行业</text>
+<text x="610" y="362.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14.5" font-weight="normal" fill="#1f2933">投了15个，全部符合你的标准。</text>
+<text x="610" y="381.6" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14.5" font-weight="normal" fill="#1f2933">“要凑30个得放宽城市范围。”</text>
+<rect x="226" y="440" width="364" height="90" rx="8" fill="#fdf0ee"/>
+<rect x="598" y="440" width="354" height="90" rx="8" fill="#eef7f0"/>
+<text x="28" y="468.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14.5" font-weight="600" fill="#1f2933">汇报结果</text>
+<text x="238" y="468.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14.5" font-weight="normal" fill="#1f2933">“我已完成表单。请注意我没有修改</text>
+<text x="238" y="487.6" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14.5" font-weight="normal" fill="#1f2933">你的文件，这也不是最终版……”</text>
+<text x="610" y="468.0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14.5" font-weight="normal" fill="#1f2933">“已提交，回执号 SQ20261107。”</text>
+</svg>
