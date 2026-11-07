@@ -16,7 +16,6 @@ Keeps GPT agents in Codex working toward what you actually want, and stops them 
   <img src="https://img.shields.io/badge/works%20with-Codex%20%26%20ChatGPT-1f2933" alt="Works with Codex and ChatGPT">
   <img src="https://img.shields.io/badge/dependencies-none-1a7f37" alt="No dependencies">
   <a href="https://github.com/shoal-rat/fishtrap-bench"><img src="https://img.shields.io/badge/benchmark-fishtrap--bench-b4540a" alt="fishtrap-bench"></a>
-  <!-- ARXIV_BADGE -->
 </p>
 
 ---
@@ -119,7 +118,15 @@ Instructions, counts, and validation checks are traps for catching what you want
 
 ## Citation
 
-<!-- CITATION -->
+```bibtex
+@misc{zhang2026fishtrap,
+  author = {Weike Zhang},
+  title  = {Get the Fish, Forget the Trap: Keeping {GPT} Agents Anchored to the User's Goal},
+  year   = {2026},
+  howpublished = {\url{https://github.com/shoal-rat/fishtrap/blob/main/paper/fishtrap-paper.pdf}},
+  note   = {arXiv version forthcoming}
+}
+```
 
 ## License
 

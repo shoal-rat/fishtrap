@@ -16,7 +16,6 @@
   <img src="https://img.shields.io/badge/适用-Codex%20与%20ChatGPT-1f2933" alt="适用于 Codex 与 ChatGPT">
   <img src="https://img.shields.io/badge/依赖-无-1a7f37" alt="无依赖">
   <a href="https://github.com/shoal-rat/fishtrap-bench"><img src="https://img.shields.io/badge/评测集-fishtrap--bench-b4540a" alt="fishtrap-bench"></a>
-  <!-- ARXIV_BADGE -->
 </p>
 
 ---
@@ -118,7 +117,15 @@ python3 ~/.fishtrap/install.py --uninstall   # 只移除 fishtrap，并保留备
 
 ## 引用
 
-<!-- CITATION -->
+```bibtex
+@misc{zhang2026fishtrap,
+  author = {Weike Zhang},
+  title  = {Get the Fish, Forget the Trap: Keeping {GPT} Agents Anchored to the User's Goal},
+  year   = {2026},
+  howpublished = {\url{https://github.com/shoal-rat/fishtrap/blob/main/paper/fishtrap-paper.pdf}},
+  note   = {arXiv version forthcoming}
+}
+```
 
 ## 许可证
 
