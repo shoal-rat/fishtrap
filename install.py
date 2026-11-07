@@ -194,7 +194,7 @@ def install(a):
         print("  Codex runs a hook only after a person trusts it. Approve the five fishtrap hooks:")
         print("   - Codex desktop app: Settings > Hooks (or 'Review hooks' above the composer) > trust them.")
         print("   - Codex CLI: type /hooks in a session and trust them.")
-    print("  Then start a new Codex session; running sessions keep their old instructions.")
+    print("  %s a new Codex session; running sessions keep their old instructions." % ("Then start" if a.hooks else "Start"))
     return 0
 
 
