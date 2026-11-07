@@ -61,9 +61,13 @@ SUBMIT_SH = re.compile(
     r"|osascript[\s\S]*\bsend\b", re.I)
 PATCH_ADD = re.compile(r"\*\*\* (?:Add|Update) File:\s*(\S[^\n]*" + OUT_DIR_WORDS + r"[^\n]*)", re.I)
 VALIDATION = re.compile(r"必填|不能为空|未填写|不完整|未完善|请完善|请补充|缺少|标黄|标红|\brequired\b|\bmissing\b|incomplete", re.I)
-TARGET = re.compile(r"\d+\s*(?:个|份|家|条|道|题|篇|张|所)|[一二三四五六七八九十两几]+\s*(?:个|份|家|条)")
-CONTINUE = re.compile(r"继续|接着|再(?:投|填|做|找|来)|先(?:投|填|做)|剩下|其余")
-UNBLOCK = re.compile(r"登录|登陆|扫码|扫了|已打开|打开了|弄好了|好了|可以了|连上|恢复了|解锁")
+TARGET = re.compile(r"\d+\s*(?:个|份|家|条|道|题|篇|张|所)|[一二三四五六七八九十两几]+\s*(?:个|份|家|条)"
+                    r"|\b\d+\s+(?:more\s+)?(?:jobs?|applications?|roles?|positions?|companies|items?|files?|entries|rows|"
+                    r"results?|leads?|candidates?|emails?|posts?)\b|\b(?:at least|up to|another)\s+\d+\b", re.I)
+CONTINUE = re.compile(r"继续|接着|再(?:投|填|做|找|来)|先(?:投|填|做)|剩下|其余"
+                      r"|\b(?:continue|keep going|carry on|go on|the rest|remaining ones?)\b", re.I)
+UNBLOCK = re.compile(r"登录|登陆|扫码|扫了|已打开|打开了|弄好了|好了|可以了|连上|恢复了|解锁"
+                     r"|\b(?:logged in|signed in|scanned|unlocked|it'?s open|access granted|back online)\b", re.I)
 
 NAME_FLAGS = [
     (re.compile(r"(?:^|[_\-\s.])v\d+|版本|终版|定稿|最终|final|draft|草稿", re.I), "a version or draft label"),
@@ -146,9 +150,23 @@ def gate_due(st, key, every):
     return True
 
 
+def _squash(s):
+    return re.sub(r"[\s_\-.·・]+", "", s)
+
+
+def _has_name(basename):
+    """Separator-insensitive; case-insensitive for names of five or more letters ("Zhiyuan LIN" ~ zhiyuan_lin)."""
+    b = _squash(basename)
+    for n in CANDIDATE_NAMES:
+        q = _squash(n)
+        if q and (q in b or (len(q) >= 5 and q.lower() in b.lower())):
+            return True
+    return False
+
+
 def name_problems(basename):
     found = [label for rx, label in NAME_FLAGS if rx.search(basename)]
-    if CANDIDATE_NAMES and not any(n in basename for n in CANDIDATE_NAMES):
+    if CANDIDATE_NAMES and not _has_name(basename):
         found.append("nothing that identifies the candidate")
     return found
 
@@ -301,7 +319,8 @@ def on_post_tool(data, st):
     emit({"hookSpecificOutput": {"hookEventName": "PostToolUse", "additionalContext":
           "A validation message is a symptom. Before filling anything it names, check that each flagged entry belongs in "
           "that section and should exist at all: move misplaced entries to the right section and delete empty or duplicate "
-          "rows first. Fill only real values from the user's materials."}})
+          "rows first. Fill each remaining field with a real value: take it from the user's materials or infer it from "
+          "what they say, name the inference in your report, and never enter a placeholder."}})
 
 
 def on_stop(data, st):
@@ -322,7 +341,8 @@ def on_stop(data, st):
                  if st.get("brief") and st.get("brief") != asked else "")
               + "1. Compare what now exists with the end state the user asked for, part by part, using what you actually "
                 "observed (page state, files, receipts, command output).\n"
-                "2. Anything you parked, skipped, or found blocked earlier: if it can be done now, do it now.\n"
+                "2. Anything you parked, skipped, or found blocked earlier: if it can be done now and the user asked for it, "
+                "do it now. Leave alone any step the user kept for themselves, such as a final hand-in.\n"
                 "3. Whatever a third party receives should read right to that reader. Forced values, assumptions, and "
                 "anything the user must do belong in your final message to the user.\n"
                 "If everything is done, end with your report. Ask only for a login, a QR-code scan, a payment, or a "

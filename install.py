@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Install, update, or remove fishtrap for OpenAI Codex (CLI and desktop app).
 
-    python3 install.py --name "Lin Zhiyuan" [--alt-names "林知远,LIN"] [--profile ~/Documents/me.md]
+    python3 install.py --name "Lin Zhiyuan" [--alt-names "林知远,LIN"] [--profile ~/Documents/me.md] [--hooks]
     python3 install.py --uninstall
     python3 install.py --check
 
 What it touches (and backs up first, under $CODEX_HOME/fishtrap-backups/<time>/):
   $CODEX_HOME/AGENTS.md      a block between <!-- fishtrap:begin --> and <!-- fishtrap:end -->
+With --hooks (experimental; in our evaluation they added cost without adding benefit):
   $CODEX_HOME/hooks.json     fishtrap's five hook entries, merged with any hooks you already have
   $CODEX_HOME/hooks/fishtrap/ the hook script and its config
 
@@ -20,7 +21,7 @@ import subprocess
 import sys
 import time
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 HERE = os.path.dirname(os.path.abspath(__file__))
 SNIPPET = os.path.join(HERE, "fishtrap", "AGENTS.fishtrap.md")
 HOOK_SRC = os.path.join(HERE, "fishtrap", "hooks", "goal_guard.py")
@@ -160,7 +161,7 @@ def install(a):
         f.write(new)
 
     hook_ok = None
-    if not a.no_hooks:
+    if a.hooks:
         hdir = os.path.join(home, "hooks", "fishtrap")
         os.makedirs(hdir, exist_ok=True)
         script = os.path.join(hdir, "goal_guard.py")
@@ -173,17 +174,23 @@ def install(a):
         write_json(hooks_json, spec)
         hook_ok = self_test(script, names)
 
+    if not a.hooks:
+        old_hooks = sum(1 for gs in load_hooks(hooks_json)["hooks"].values() for g in gs
+                        for h in g.get("hooks", []) if HOOK_TAG in str(h.get("command")))
+        if old_hooks:
+            print("Note: fishtrap hooks from an earlier install are still in hooks.json. Run with --hooks to update them,")
+            print("      or --uninstall and then install again without --hooks to remove them.")
     print("fishtrap %s %s in %s" % (VERSION, "updated" if had else "installed", home))
     print("  AGENTS.md: fishtrap block %s at the top; your other instructions are unchanged."
           % ("replaced" if had else "added"))
-    if not a.no_hooks:
+    if a.hooks:
         print("  hooks.json: 5 fishtrap hooks merged (UserPromptSubmit, SessionStart, PreToolUse, PostToolUse, Stop).")
         print("  hook self-test: %s" % ("passed" if hook_ok else "FAILED - check that python3 runs"))
     if saved:
         print("  backup of your previous files: %s" % saved)
     print()
-    print("NEXT STEP FOR THE HUMAN (an agent must not do this for them):")
-    if not a.no_hooks:
+    print("NEXT STEP FOR THE HUMAN" + (" (an agent must not do this for them):" if a.hooks else ":"))
+    if a.hooks:
         print("  Codex runs a hook only after a person trusts it. Approve the five fishtrap hooks:")
         print("   - Codex desktop app: Settings > Hooks (or 'Review hooks' above the composer) > trust them.")
         print("   - Codex CLI: type /hooks in a session and trust them.")
@@ -238,7 +245,9 @@ def main():
     p.add_argument("--alt-names", help="other spellings that also identify the user, comma-separated")
     p.add_argument("--profile", help="path to the user's résumé/profile notes, if they keep one")
     p.add_argument("--codex-home", help="defaults to $CODEX_HOME or ~/.codex")
-    p.add_argument("--no-hooks", action="store_true", help="install the instructions only")
+    p.add_argument("--hooks", action="store_true",
+                   help="also install the five experimental hooks (they need a human to trust them in Codex)")
+    p.add_argument("--no-hooks", action="store_true", help=argparse.SUPPRESS)  # the default since 1.1.0
     p.add_argument("--uninstall", action="store_true")
     p.add_argument("--check", action="store_true", help="show what is installed and recent hook activity")
     a = p.parse_args()
