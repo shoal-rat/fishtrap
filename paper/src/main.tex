@@ -4,7 +4,7 @@
 \ifXeTeX
   \usepackage{fontspec}
   \usepackage{xeCJK}
-  \setCJKmainfont{Songti SC}
+  \IfFontExistsTF{Songti SC}{\setCJKmainfont{Songti SC}}{\setCJKmainfont{FandolSong-Regular.otf}[BoldFont=FandolSong-Bold.otf]}
   \newcommand{\zh}[1]{#1}
 \else
   \usepackage[T1]{fontenc}
